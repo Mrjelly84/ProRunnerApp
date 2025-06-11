@@ -126,7 +126,7 @@
     <value>Xolonium, 9pt</value>
   </data>
   <data name="lblCurrent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>438, 47</value>
+    <value>433, 48</value>
   </data>
   <data name="lblCurrent.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 13</value>
@@ -160,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>438, 11</value>
+    <value>433, 12</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 21</value>
@@ -187,7 +187,7 @@
     <value>Xolonium, 9pt</value>
   </data>
   <data name="btnManageRuns.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 100</value>
+    <value>145, 42</value>
   </data>
   <data name="btnManageRuns.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 23</value>
@@ -214,7 +214,7 @@
     <value>Xolonium, 9pt</value>
   </data>
   <data name="btnGetLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 100</value>
+    <value>276, 42</value>
   </data>
   <data name="btnGetLocation.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 23</value>
@@ -241,7 +241,7 @@
     <value>Xolonium, 9pt</value>
   </data>
   <data name="btnCreateRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 100</value>
+    <value>31, 42</value>
   </data>
   <data name="btnCreateRun.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 23</value>
@@ -268,7 +268,7 @@
     <value>91, 81</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>684, 133</value>
+    <value>684, 80</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -292,7 +292,7 @@
     <value>15, 54</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 186</value>
+    <value>634, 206</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -340,7 +340,7 @@
     <value>1</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 385</value>
+    <value>91, 432</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>684, 272</value>
@@ -463,10 +463,10 @@
     <value>True</value>
   </data>
   <data name="dgvRunHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 44</value>
+    <value>15, 31</value>
   </data>
   <data name="dgvRunHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>650, 79</value>
+    <value>650, 182</value>
   </data>
   <data name="dgvRunHistory.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -514,10 +514,10 @@
     <value>1</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 230</value>
+    <value>91, 167</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>684, 133</value>
+    <value>684, 231</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -534,9 +534,6 @@
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -557,12 +554,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Pro Runner</value>
-  </data>
-  <data name="&gt;&gt;bindingSource1.Name" xml:space="preserve">
-    <value>bindingSource1</value>
-  </data>
-  <data name="&gt;&gt;bindingSource1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainFrm</value>
