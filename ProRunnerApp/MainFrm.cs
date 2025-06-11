@@ -18,6 +18,7 @@ namespace ProRunnerApp
             dgvRunHistory.Columns.Add("Terrain", "Terrain");
             dgvRunHistory.Columns.Add("Weather", "Weather");
             dgvRunHistory.Columns.Add("Distance", "Distance(Meters)");
+            dgvRunHistory.Columns.Add("Date", "Date");
 
             string[] files = Directory.GetFiles(Application.StartupPath, "*.txt");
             foreach (string file in files)
@@ -28,7 +29,7 @@ namespace ProRunnerApp
                 {
                     string line = reader.ReadLine();
                     string[] values = line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    dgvRunHistory.Rows.Add(filename, values[0], values[1], values[2]);
+                    dgvRunHistory.Rows.Add(filename, values[0], values[1], values[2], values[3]);
                 }
 
         }    }

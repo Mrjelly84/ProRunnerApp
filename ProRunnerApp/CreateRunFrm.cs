@@ -15,13 +15,14 @@ namespace ProRunnerApp
         public CreateRunFrm()
         {
             InitializeComponent();
+            dateTimePicker1.Visible = true;
 
             // Define the columns for the DataGridView
             dataGridView1.Columns.Add("Name", "Name");
             dataGridView1.Columns.Add("Terrain", "Terrain");
             dataGridView1.Columns.Add("Weather", "Weather");
             dataGridView1.Columns.Add("Distance", "Distance(Meters)");
-
+            dataGridView1.Columns.Add("Date", "Date");
             // Load existing data from the text files
             string[] files = Directory.GetFiles(Application.StartupPath, "*.txt");
             foreach (string file in files)
@@ -32,7 +33,7 @@ namespace ProRunnerApp
                 {
                     string line = reader.ReadLine();
                     string[] values = line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    dataGridView1.Rows.Add(filename, values[0], values[1], values[2]);
+                    dataGridView1.Rows.Add(filename, values[0], values[1], values[2], values[3]);
 
                     
 
@@ -79,6 +80,9 @@ namespace ProRunnerApp
             // Get the input distance value from the masked text box
             double distance = double.Parse(mtxtDistance.Text);
 
+            //Get Date
+            string date = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
+
             // Get the filename from the text box
             string filename = txtFileName.Text;
 
@@ -87,10 +91,10 @@ namespace ProRunnerApp
             using (StreamWriter writer = File.CreateText(filePath))
             {
                 // Write the selected terrain, weather, and distance values to the file
-                writer.WriteLine($" {terrain}, {weather},  {distance}");
+                writer.WriteLine($" {terrain}, {weather},  {distance}, {date}");
             }
             // Add a row to the DataGridView with the filename and data
-            dataGridView1.Rows.Add(filename, terrain, weather, distance.ToString());
+            dataGridView1.Rows.Add(filename, terrain, weather, distance, date.ToString());
 
             MessageBox.Show("Data saved successfully!");
 

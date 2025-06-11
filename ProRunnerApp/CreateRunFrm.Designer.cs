@@ -46,6 +46,7 @@
             label2 = new Label();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
+            dateTimePicker1 = new DateTimePicker();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picCRR).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCRL).BeginInit();
@@ -86,6 +87,7 @@
             // 
             resources.ApplyResources(pnlCreateRun, "pnlCreateRun");
             pnlCreateRun.BackColor = Color.LightGray;
+            pnlCreateRun.Controls.Add(dateTimePicker1);
             pnlCreateRun.Controls.Add(label5);
             pnlCreateRun.Controls.Add(txtFileName);
             pnlCreateRun.Controls.Add(mtxtDistance);
@@ -149,7 +151,7 @@
             // 
             resources.ApplyResources(cbTerrain, "cbTerrain");
             cbTerrain.FormattingEnabled = true;
-            cbTerrain.Items.AddRange(new object[] { resources.GetString("cbTerrain.Items"), resources.GetString("cbTerrain.Items1"), resources.GetString("cbTerrain.Items2") });
+            cbTerrain.Items.AddRange(new object[] { resources.GetString("cbTerrain.Items"), resources.GetString("cbTerrain.Items1"), resources.GetString("cbTerrain.Items2"), resources.GetString("cbTerrain.Items3") });
             cbTerrain.Name = "cbTerrain";
             cbTerrain.SelectedIndexChanged += cbTerrain_SelectedIndexChanged;
             // 
@@ -180,7 +182,16 @@
             resources.ApplyResources(dataGridView1, "dataGridView1");
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridView1.ShowCellToolTips = false;
+            dataGridView1.ShowEditingIcon = false;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            resources.ApplyResources(dateTimePicker1, "dateTimePicker1");
+            dateTimePicker1.MinDate = new DateTime(2025, 6, 11, 0, 0, 0, 0);
+            dateTimePicker1.Name = "dateTimePicker1";
             // 
             // CreateRunFrm
             // 
@@ -226,5 +237,6 @@
         private MaskedTextBox mtxtDistance;
         private Label label5;
         private TextBox txtFileName;
+        private DateTimePicker dateTimePicker1;
     }
 }

@@ -109,6 +109,7 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.LightGray;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(dataGridView1, "dataGridView1");
@@ -160,6 +161,7 @@
             // 
             dgvRunHistory.AllowUserToAddRows = false;
             dgvRunHistory.AllowUserToDeleteRows = false;
+            dgvRunHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRunHistory.BackgroundColor = Color.LightGray;
             dgvRunHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(dgvRunHistory, "dgvRunHistory");
