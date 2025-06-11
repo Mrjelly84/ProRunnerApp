@@ -33,18 +33,12 @@ namespace ProRunnerApp
 
         }    }
 
-        private void MainFrm_Load(object sender, EventArgs e)
-        { 
-        
-        }
-        
-            
+         
+                     
                
-                
            
         
         
-
         private void btnCreateRun_Click(object sender, EventArgs e)
         {
             // displays CreateRunFrm
@@ -64,9 +58,6 @@ namespace ProRunnerApp
             lblCurrent.Text = "(no location logic  yet)";
         }
 
-        private void lblCurrent_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

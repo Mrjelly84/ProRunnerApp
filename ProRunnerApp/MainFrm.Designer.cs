@@ -69,9 +69,7 @@
             // lblCurrent
             // 
             resources.ApplyResources(lblCurrent, "lblCurrent");
-            lblCurrent.BackColor = Color.Silver;
             lblCurrent.Name = "lblCurrent";
-            lblCurrent.Click += lblCurrent_Click;
             // 
             // label4
             // 
@@ -111,6 +109,7 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = Color.LightGray;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(dataGridView1, "dataGridView1");
             dataGridView1.Name = "dataGridView1";
@@ -161,10 +160,13 @@
             // 
             dgvRunHistory.AllowUserToAddRows = false;
             dgvRunHistory.AllowUserToDeleteRows = false;
+            dgvRunHistory.BackgroundColor = Color.LightGray;
             dgvRunHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(dgvRunHistory, "dgvRunHistory");
             dgvRunHistory.Name = "dgvRunHistory";
             dgvRunHistory.ReadOnly = true;
+            dgvRunHistory.ShowCellToolTips = false;
+            dgvRunHistory.TabStop = false;
             // 
             // label2
             // 
