@@ -73,6 +73,13 @@ namespace ProRunnerApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // Validate fields are filled in
+            if (string.IsNullOrWhiteSpace(txtFileName.Text) || cbTerrain.SelectedIndex == -1 || cbWeather.SelectedIndex == -1 || string.IsNullOrWhiteSpace(mtxtDistance.Text))
+            {
+                MessageBox.Show("Please fill in all fields before saving.");
+                return;
+            }
+
             // Get the selected terrain and weather values
             string terrain = cbTerrain.SelectedItem.ToString();
             string weather = cbWeather.SelectedItem.ToString();
