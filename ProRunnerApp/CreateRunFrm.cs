@@ -10,10 +10,13 @@ using System.Windows.Forms;
 
 namespace ProRunnerApp
 {
-    public  partial class CreateRunFrm : Form
+    public partial class CreateRunFrm : Form
     {
-        public CreateRunFrm()
+        private Form _mainForm;
+
+        public CreateRunFrm(Form mainForm)
         {
+            _mainForm = mainForm;
             InitializeComponent();
             dateTimePicker1.Visible = true;
 
@@ -28,23 +31,36 @@ namespace ProRunnerApp
             foreach (string file in files)
             {
                 string filename = Path.GetFileNameWithoutExtension(file);
-               
+
                 using (StreamReader reader = File.OpenText(file))
                 {
-                    string line = reader.ReadLine();
-                    string[] values = line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    dataGridView1.Rows.Add(filename, values[0], values[1], values[2], values[3]);
-
-                    
-
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] values = line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                        // Ensure there are at least 5 values (Name, Terrain, Weather, Distance, Date)
+                        if (values.Length >= 5)
+                        {
+                            dataGridView1.Rows.Add(values[0], values[1], values[2], values[3], values[4]);
+                        }
+                    }
                 }
-
             }
-
         }
 
-
-
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+            if (_mainForm is MainFrm mainFrm)
+            {
+                mainFrm.ReloadRunHistory();
+                mainFrm.Show();
+            }
+            else
+            {
+                _mainForm?.Show();
+            }
+        }
 
         private void mtxtDistance_TextChanged(object sender, EventArgs e)
         {
@@ -57,9 +73,7 @@ namespace ProRunnerApp
             {
                 mtxtDistance.Text = "";
             }
-
         }
-
 
         private void cbTerrain_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -87,21 +101,22 @@ namespace ProRunnerApp
             // Get the input distance value from the masked text box
             double distance = double.Parse(mtxtDistance.Text);
 
-            //Get Date
+            // Get Date
             string date = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
 
-            // Get the filename from the text box
-            string filename = txtFileName.Text;
+            // Get the person's name from the text box
+            string name = txtFileName.Text.Trim();
 
-            // Create a text file to store the data
-            string filePath = Path.Combine(Application.StartupPath, $"{filename}.txt");
-            using (StreamWriter writer = File.CreateText(filePath))
+            // Create or append to the person's text file
+            string filePath = Path.Combine(Application.StartupPath, $"{name}.txt");
+            using (StreamWriter writer = new StreamWriter(filePath, append: true))
             {
-                // Write the selected terrain, weather, and distance values to the file
-                writer.WriteLine($" {terrain}, {weather},  {distance}, {date}");
+                // Write the run data as a new line
+                writer.WriteLine($"{name},{terrain},{weather},{distance},{date}");
             }
-            // Add a row to the DataGridView with the filename and data
-            dataGridView1.Rows.Add(filename, terrain, weather, distance, date.ToString());
+
+            // Add a row to the DataGridView with the data
+            dataGridView1.Rows.Add(name, terrain, weather, distance, date);
 
             MessageBox.Show("Data saved successfully!");
 
@@ -110,12 +125,11 @@ namespace ProRunnerApp
             mtxtDistance.Clear();
             cbTerrain.SelectedIndex = -1;
             cbWeather.SelectedIndex = -1;
-
         }
 
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
     }
 }

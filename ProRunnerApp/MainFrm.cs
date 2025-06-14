@@ -31,19 +31,13 @@ namespace ProRunnerApp
                     string[] values = line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                     dgvRunHistory.Rows.Add(filename, values[0], values[1], values[2], values[3]);
                 }
+            }
+        }
 
-        }    }
-
-         
-                     
-               
-           
-        
-        
         private void btnCreateRun_Click(object sender, EventArgs e)
         {
-            // displays CreateRunFrm
-            CreateRunFrm createRunForm = new CreateRunFrm();
+            // Pass 'this' as the required 'mainForm' parameter
+            CreateRunFrm createRunForm = new CreateRunFrm(this);
             createRunForm.ShowDialog();
         }
 
@@ -59,6 +53,33 @@ namespace ProRunnerApp
             lblCurrent.Text = "(no location logic  yet)";
         }
 
-        
+        private void btnOpenCreateRun_Click(object sender, EventArgs e)
+        {
+            var createRunFrm = new CreateRunFrm(this);
+            this.Hide();
+            createRunFrm.Show();
+        }
+
+        // Add this method to MainFrm to reload the DataGridView
+        public void ReloadRunHistory()
+        {
+            dgvRunHistory.Rows.Clear();
+            string[] files = Directory.GetFiles(Application.StartupPath, "*.txt");
+            foreach (string file in files)
+            {
+                using (StreamReader reader = File.OpenText(file))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] values = line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                        if (values.Length >= 5)
+                        {
+                            dgvRunHistory.Rows.Add(values[0], values[1], values[2], values[3], values[4]);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
