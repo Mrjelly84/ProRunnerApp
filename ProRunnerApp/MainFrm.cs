@@ -10,6 +10,8 @@ namespace ProRunnerApp
 {
     public partial class MainFrm : Form
     {
+        private bool _runHistoryChanged = false;
+
         public MainFrm()
         {
             InitializeComponent();
@@ -32,9 +34,12 @@ namespace ProRunnerApp
 
         private void btnManageRuns_Click(object sender, EventArgs e)
         {
-            // displays ManageRunsFms
-            ManageRunsFrm manageRunsForm = new ManageRunsFrm();
-            manageRunsForm.ShowDialog();
+            var manageRunsFrm = new ManageRunsFrm();
+            manageRunsFrm.RunHistoryChanged += (s, ev) => _runHistoryChanged = true;
+            _runHistoryChanged = false;
+            manageRunsFrm.ShowDialog();
+            if (_runHistoryChanged)
+                ReloadRunHistory();
         }
 
         private void btnGetLocation_Click(object sender, EventArgs e)
@@ -47,6 +52,16 @@ namespace ProRunnerApp
             var createRunFrm = new CreateRunFrm(this);
             this.Hide();
             createRunFrm.Show();
+        }
+
+        private void btnOpenManageRuns_Click(object sender, EventArgs e)
+        {
+            var manageRunsFrm = new ManageRunsFrm();
+            manageRunsFrm.RunHistoryChanged += (s, ev) => _runHistoryChanged = true;
+            _runHistoryChanged = false;
+            manageRunsFrm.ShowDialog();
+            if (_runHistoryChanged)
+                ReloadRunHistory();
         }
 
         // Add this method to MainFrm to reload the DataGridView

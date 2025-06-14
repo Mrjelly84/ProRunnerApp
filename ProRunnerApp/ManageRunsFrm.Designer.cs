@@ -93,7 +93,7 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(421, 154);
+            btnSearch.Location = new Point(346, 154);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(126, 34);
             btnSearch.TabIndex = 4;
@@ -103,7 +103,7 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(204, 156);
+            txtSearch.Location = new Point(129, 156);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(211, 31);
             txtSearch.TabIndex = 5;
@@ -116,16 +116,16 @@
             dgvResults.AllowUserToResizeRows = false;
             dgvResults.BackgroundColor = Color.LightGray;
             dgvResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResults.Location = new Point(120, 222);
+            dgvResults.Location = new Point(34, 222);
             dgvResults.Name = "dgvResults";
             dgvResults.ReadOnly = true;
             dgvResults.RowHeadersWidth = 62;
-            dgvResults.Size = new Size(766, 225);
+            dgvResults.Size = new Size(867, 225);
             dgvResults.TabIndex = 6;
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(581, 154);
+            btnEdit.Location = new Point(506, 154);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(112, 34);
             btnEdit.TabIndex = 7;
@@ -135,7 +135,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(716, 154);
+            btnDelete.Location = new Point(641, 154);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(112, 34);
             btnDelete.TabIndex = 8;
