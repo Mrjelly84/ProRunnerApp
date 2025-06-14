@@ -32,7 +32,7 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             label1 = new Label();
-            button1 = new Button();
+            btnSearch = new Button();
             txtSearch = new TextBox();
             dgvResults = new DataGridView();
             btnEdit = new Button();
@@ -91,14 +91,15 @@
             label1.TabIndex = 1;
             label1.Text = "ProRunner";
             // 
-            // button1
+            // btnSearch
             // 
-            button1.Location = new Point(421, 154);
-            button1.Name = "button1";
-            button1.Size = new Size(126, 34);
-            button1.TabIndex = 4;
-            button1.Text = "Search Runs";
-            button1.UseVisualStyleBackColor = true;
+            btnSearch.Location = new Point(421, 154);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(126, 34);
+            btnSearch.TabIndex = 4;
+            btnSearch.Text = "Search Runs";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // txtSearch
             // 
@@ -111,13 +112,15 @@
             // 
             dgvResults.AllowUserToAddRows = false;
             dgvResults.AllowUserToDeleteRows = false;
+            dgvResults.AllowUserToResizeColumns = false;
+            dgvResults.AllowUserToResizeRows = false;
             dgvResults.BackgroundColor = Color.LightGray;
             dgvResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResults.Location = new Point(204, 222);
+            dgvResults.Location = new Point(120, 222);
             dgvResults.Name = "dgvResults";
             dgvResults.ReadOnly = true;
             dgvResults.RowHeadersWidth = 62;
-            dgvResults.Size = new Size(624, 225);
+            dgvResults.Size = new Size(766, 225);
             dgvResults.TabIndex = 6;
             // 
             // btnEdit
@@ -128,6 +131,7 @@
             btnEdit.TabIndex = 7;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
@@ -137,6 +141,7 @@
             btnDelete.TabIndex = 8;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // ManageRunsFrm
             // 
@@ -148,7 +153,7 @@
             Controls.Add(btnEdit);
             Controls.Add(dgvResults);
             Controls.Add(txtSearch);
-            Controls.Add(button1);
+            Controls.Add(btnSearch);
             Controls.Add(panel3);
             Margin = new Padding(4, 5, 4, 5);
             MaximumSize = new Size(1156, 778);
@@ -173,7 +178,7 @@
         private PictureBox pictureBox2;
         private Label label1;
         private PictureBox pictureBox1;
-        private Button button1;
+        private Button btnSearch;
         private TextBox txtSearch;
         private DataGridView dgvResults;
         private Button btnEdit;
