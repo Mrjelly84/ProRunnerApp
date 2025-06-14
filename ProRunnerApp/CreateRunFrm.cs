@@ -16,13 +16,11 @@
             dataGridView1.Columns.Add("Weather", "Weather");
             dataGridView1.Columns.Add("Distance", "Distance(Meters)");
             dataGridView1.Columns.Add("Date", "Date");
-            // Load existing data from the text files
-            string[] files = Directory.GetFiles(Application.StartupPath, "*.txt");
-            foreach (string file in files)
+            // Load existing data from the text file
+            string filePath = Path.Combine(Application.StartupPath, "RunHistory.txt");
+            if (File.Exists(filePath))
             {
-                string filename = Path.GetFileNameWithoutExtension(file);
-
-                using (StreamReader reader = File.OpenText(file))
+                using (StreamReader reader = File.OpenText(filePath))
                 {
                     string line;
                     while ((line = reader.ReadLine()) != null)
@@ -77,40 +75,29 @@
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Validate fields are filled in
             if (string.IsNullOrWhiteSpace(txtFileName.Text) || cbTerrain.SelectedIndex == -1 || cbWeather.SelectedIndex == -1 || string.IsNullOrWhiteSpace(mtxtDistance.Text))
             {
                 MessageBox.Show("Please fill in all fields before saving.");
                 return;
             }
 
-            // Get the selected terrain and weather values
             string terrain = cbTerrain.SelectedItem.ToString();
             string weather = cbWeather.SelectedItem.ToString();
-
-            // Get the input distance value from the masked text box
             double distance = double.Parse(mtxtDistance.Text);
-
-            // Get Date
             string date = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
-
-            // Get the person's name from the text box
             string name = txtFileName.Text.Trim();
 
-            // Create or append to the person's text file
-            string filePath = Path.Combine(Application.StartupPath, $"{name}.txt");
+            // Save to a single file
+            string filePath = Path.Combine(Application.StartupPath, "RunHistory.txt");
             using (StreamWriter writer = new StreamWriter(filePath, append: true))
             {
-                // Write the run data as a new line
                 writer.WriteLine($"{name},{terrain},{weather},{distance},{date}");
             }
 
-            // Add a row to the DataGridView with the data
             dataGridView1.Rows.Add(name, terrain, weather, distance, date);
 
             MessageBox.Show("Data saved successfully!");
 
-            // Clear the text boxes and reset the comboboxes
             txtFileName.Clear();
             mtxtDistance.Clear();
             cbTerrain.SelectedIndex = -1;
