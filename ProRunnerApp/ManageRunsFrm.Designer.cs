@@ -93,7 +93,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(58, 155);
+            button1.Location = new Point(421, 154);
             button1.Name = "button1";
             button1.Size = new Size(126, 34);
             button1.TabIndex = 4;
@@ -102,7 +102,7 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(214, 159);
+            txtSearch.Location = new Point(204, 156);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(211, 31);
             txtSearch.TabIndex = 5;
@@ -122,7 +122,7 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(76, 232);
+            btnEdit.Location = new Point(581, 154);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(112, 34);
             btnEdit.TabIndex = 7;
@@ -131,7 +131,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(80, 282);
+            btnDelete.Location = new Point(716, 154);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(112, 34);
             btnDelete.TabIndex = 8;
