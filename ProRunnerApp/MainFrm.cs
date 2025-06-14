@@ -20,18 +20,7 @@ namespace ProRunnerApp
             dgvRunHistory.Columns.Add("Distance", "Distance(Meters)");
             dgvRunHistory.Columns.Add("Date", "Date");
 
-            string[] files = Directory.GetFiles(Application.StartupPath, "*.txt");
-            foreach (string file in files)
-            {
-                string filename = Path.GetFileNameWithoutExtension(file);
-
-                using (StreamReader reader = File.OpenText(file))
-                {
-                    string line = reader.ReadLine();
-                    string[] values = line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    dgvRunHistory.Rows.Add(filename, values[0], values[1], values[2], values[3]);
-                }
-            }
+            ReloadRunHistory();
         }
 
         private void btnCreateRun_Click(object sender, EventArgs e)
@@ -64,10 +53,10 @@ namespace ProRunnerApp
         public void ReloadRunHistory()
         {
             dgvRunHistory.Rows.Clear();
-            string[] files = Directory.GetFiles(Application.StartupPath, "*.txt");
-            foreach (string file in files)
+            string filePath = Path.Combine(Application.StartupPath, "RunHistory.txt");
+            if (File.Exists(filePath))
             {
-                using (StreamReader reader = File.OpenText(file))
+                using (StreamReader reader = File.OpenText(filePath))
                 {
                     string line;
                     while ((line = reader.ReadLine()) != null)
