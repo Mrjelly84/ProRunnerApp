@@ -108,5 +108,10 @@
         {
 
         }
+
+        private void pnlCreateRun_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

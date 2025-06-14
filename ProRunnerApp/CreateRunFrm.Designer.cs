@@ -34,6 +34,7 @@
             label1 = new Label();
             picCRL = new PictureBox();
             pnlCreateRun = new Panel();
+            dateTimePicker1 = new DateTimePicker();
             label5 = new Label();
             txtFileName = new TextBox();
             mtxtDistance = new MaskedTextBox();
@@ -46,7 +47,6 @@
             label2 = new Label();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
-            dateTimePicker1 = new DateTimePicker();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picCRR).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCRL).BeginInit();
@@ -99,6 +99,14 @@
             pnlCreateRun.Controls.Add(cbTerrain);
             pnlCreateRun.Controls.Add(label2);
             pnlCreateRun.Name = "pnlCreateRun";
+            pnlCreateRun.Paint += pnlCreateRun_Paint;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            resources.ApplyResources(dateTimePicker1, "dateTimePicker1");
+            dateTimePicker1.MinDate = new DateTime(2025, 6, 11, 0, 0, 0, 0);
+            dateTimePicker1.Name = "dateTimePicker1";
             // 
             // label5
             // 
@@ -185,13 +193,6 @@
             dataGridView1.ShowCellToolTips = false;
             dataGridView1.ShowEditingIcon = false;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            resources.ApplyResources(dateTimePicker1, "dateTimePicker1");
-            dateTimePicker1.MinDate = new DateTime(2025, 6, 11, 0, 0, 0, 0);
-            dateTimePicker1.Name = "dateTimePicker1";
             // 
             // CreateRunFrm
             // 

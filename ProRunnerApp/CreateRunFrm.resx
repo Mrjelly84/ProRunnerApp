@@ -119,10 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="picCRR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>724, 0</value>
+    <value>1034, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="picCRR.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="picCRR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 62</value>
+    <value>180, 103</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="picCRR.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
@@ -148,13 +152,16 @@
     <value>True</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Xolonium, 21.75pt</value>
+    <value>Microsoft Sans Serif, 21.75pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>343, 12</value>
+    <value>490, 20</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 32</value>
+    <value>233, 52</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -175,10 +182,13 @@
     <value>1</value>
   </data>
   <data name="picCRL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+    <value>4, 0</value>
+  </data>
+  <data name="picCRL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="picCRL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 62</value>
+    <value>180, 103</value>
   </data>
   <data name="picCRL.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -199,10 +209,13 @@
     <value>2</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-26, -1</value>
+    <value>-37, -2</value>
+  </data>
+  <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>853, 62</value>
+    <value>1219, 103</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -223,10 +236,13 @@
     <value>True</value>
   </data>
   <data name="dateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 42</value>
+    <value>593, 70</value>
+  </data>
+  <data name="dateTimePicker1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="dateTimePicker1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 23</value>
+    <value>163, 31</value>
   </data>
   <data name="dateTimePicker1.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -247,13 +263,16 @@
     <value>True</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Xolonium, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 50</value>
+    <value>187, 83</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 13</value>
+    <value>57, 22</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -274,13 +293,16 @@
     <value>1</value>
   </data>
   <data name="txtFileName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Xolonium, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="txtFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 45</value>
+    <value>259, 75</value>
+  </data>
+  <data name="txtFileName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="txtFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 22</value>
+    <value>221, 28</value>
   </data>
   <data name="txtFileName.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -298,16 +320,19 @@
     <value>2</value>
   </data>
   <data name="mtxtDistance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Xolonium, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="mtxtDistance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 117</value>
+    <value>499, 195</value>
+  </data>
+  <data name="mtxtDistance.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="mtxtDistance.Mask" xml:space="preserve">
     <value>00000</value>
   </data>
   <data name="mtxtDistance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 22</value>
+    <value>74, 28</value>
   </data>
   <data name="mtxtDistance.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -325,13 +350,16 @@
     <value>3</value>
   </data>
   <data name="btnSave.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Xolonium, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>482, 114</value>
+    <value>689, 190</value>
+  </data>
+  <data name="btnSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 35</value>
+    <value>137, 58</value>
   </data>
   <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -355,13 +383,16 @@
     <value>True</value>
   </data>
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Xolonium, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 90</value>
+    <value>499, 150</value>
+  </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>80, 22</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -385,13 +416,16 @@
     <value>True</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Xolonium, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 90</value>
+    <value>261, 150</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
+    <value>78, 22</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -412,7 +446,7 @@
     <value>6</value>
   </data>
   <data name="cbWeather.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Xolonium, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="cbWeather.Items" xml:space="preserve">
     <value>Snow</value>
@@ -427,10 +461,13 @@
     <value>Windy</value>
   </data>
   <data name="cbWeather.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 117</value>
+    <value>259, 195</value>
+  </data>
+  <data name="cbWeather.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="cbWeather.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
+    <value>171, 30</value>
   </data>
   <data name="cbWeather.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -451,13 +488,16 @@
     <value>True</value>
   </data>
   <data name="lblTerrain.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Xolonium, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="lblTerrain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 94</value>
+    <value>59, 157</value>
+  </data>
+  <data name="lblTerrain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblTerrain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 13</value>
+    <value>68, 22</value>
   </data>
   <data name="lblTerrain.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -478,7 +518,7 @@
     <value>8</value>
   </data>
   <data name="cbTerrain.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Xolonium, 9pt</value>
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="cbTerrain.Items" xml:space="preserve">
     <value>Road</value>
@@ -493,10 +533,13 @@
     <value>Sand</value>
   </data>
   <data name="cbTerrain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 117</value>
+    <value>54, 195</value>
+  </data>
+  <data name="cbTerrain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="cbTerrain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
+    <value>171, 30</value>
   </data>
   <data name="cbTerrain.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -517,13 +560,16 @@
     <value>True</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Xolonium, 14.249998pt</value>
+    <value>Microsoft Sans Serif, 14.249998pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 10</value>
+    <value>4, 17</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 21</value>
+    <value>163, 33</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -544,10 +590,13 @@
     <value>10</value>
   </data>
   <data name="pnlCreateRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 91</value>
+    <value>119, 152</value>
+  </data>
+  <data name="pnlCreateRun.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="pnlCreateRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 184</value>
+    <value>906, 307</value>
   </data>
   <data name="pnlCreateRun.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -565,10 +614,16 @@
     <value>1</value>
   </data>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
+    <value>19, 27</value>
+  </data>
+  <data name="dataGridView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>62</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>601, 166</value>
+    <value>859, 277</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -586,10 +641,13 @@
     <value>0</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 310</value>
+    <value>119, 517</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>634, 202</value>
+    <value>906, 337</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -610,16 +668,19 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
+    <value>10, 25</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>819, 552</value>
+    <value>1161, 892</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>835, 591</value>
+    <value>1183, 948</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 591</value>
+    <value>22, 948</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
