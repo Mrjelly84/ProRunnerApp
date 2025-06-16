@@ -68,6 +68,7 @@ namespace ProRunnerApp
             string filePath = Path.Combine(Application.StartupPath, "RunHistory.txt");
             if (File.Exists(filePath))
             {
+                var runs = new List<string[]>();
                 using (StreamReader reader = File.OpenText(filePath))
                 {
                     string line;
@@ -76,9 +77,23 @@ namespace ProRunnerApp
                         string[] values = line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                         if (values.Length >= 5)
                         {
-                            dgvRunHistory.Rows.Add(values[0], values[1], values[2], values[3], values[4]);
+                            runs.Add(values);
                         }
                     }
+                }
+
+                // Sort runs by date (newest first, index 4)
+                runs.Sort((a, b) =>
+                {
+                    DateTime dateA, dateB;
+                    DateTime.TryParse(a[4], out dateA);
+                    DateTime.TryParse(b[4], out dateB);
+                    return dateB.CompareTo(dateA); // Descending
+                });
+
+                foreach (var values in runs)
+                {
+                    dgvRunHistory.Rows.Add(values[0], values[1], values[2], values[3], values[4]);
                 }
             }
         }
