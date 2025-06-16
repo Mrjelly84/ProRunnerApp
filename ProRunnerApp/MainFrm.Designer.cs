@@ -30,10 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             panel1 = new Panel();
-            lblCurrent = new Label();
-            label4 = new Label();
             btnManageRuns = new Button();
-            btnGetLocation = new Button();
             btnCreateRun = new Button();
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
@@ -58,23 +55,10 @@
             // panel1
             // 
             panel1.BackColor = Color.LightGray;
-            panel1.Controls.Add(lblCurrent);
-            panel1.Controls.Add(label4);
             panel1.Controls.Add(btnManageRuns);
-            panel1.Controls.Add(btnGetLocation);
             panel1.Controls.Add(btnCreateRun);
             resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
-            // 
-            // lblCurrent
-            // 
-            resources.ApplyResources(lblCurrent, "lblCurrent");
-            lblCurrent.Name = "lblCurrent";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(label4, "label4");
-            label4.Name = "label4";
             // 
             // btnManageRuns
             // 
@@ -82,13 +66,6 @@
             btnManageRuns.Name = "btnManageRuns";
             btnManageRuns.UseVisualStyleBackColor = true;
             btnManageRuns.Click += btnManageRuns_Click;
-            // 
-            // btnGetLocation
-            // 
-            resources.ApplyResources(btnGetLocation, "btnGetLocation");
-            btnGetLocation.Name = "btnGetLocation";
-            btnGetLocation.UseVisualStyleBackColor = true;
-            btnGetLocation.Click += btnGetLocation_Click;
             // 
             // btnCreateRun
             // 
@@ -188,7 +165,6 @@
             Name = "MainFrm";
             ShowIcon = false;
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -210,15 +186,12 @@
         private Panel panel3;
         private Label label1;
         private PictureBox pictureBox1;
-        private Button btnGetLocation;
         private Button btnCreateRun;
         private Panel panel4;
         private Button btnManageRuns;
         private PictureBox pictureBox2;
         private Label label2;
         private Label label3;
-        private Label label4;
-        private Label lblCurrent;
         private DataGridView dataGridView1;
         private DataGridView dgvRunHistory;
     }

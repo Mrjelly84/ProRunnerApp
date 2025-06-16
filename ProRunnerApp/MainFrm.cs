@@ -42,10 +42,7 @@ namespace ProRunnerApp
                 ReloadRunHistory();
         }
 
-        private void btnGetLocation_Click(object sender, EventArgs e)
-        {
-            lblCurrent.Text = "(no location logic  yet)";
-        }
+        
 
         private void btnOpenCreateRun_Click(object sender, EventArgs e)
         {
