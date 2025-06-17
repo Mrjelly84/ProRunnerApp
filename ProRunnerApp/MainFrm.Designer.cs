@@ -33,7 +33,7 @@
             btnManageRuns = new Button();
             btnCreateRun = new Button();
             panel2 = new Panel();
-            dataGridView1 = new DataGridView();
+            dgvTopScore = new DataGridView();
             label3 = new Label();
             panel3 = new Panel();
             pictureBox2 = new PictureBox();
@@ -44,7 +44,7 @@
             label2 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTopScore).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -78,20 +78,20 @@
             // 
             resources.ApplyResources(panel2, "panel2");
             panel2.BackColor = Color.LightGray;
-            panel2.Controls.Add(dataGridView1);
+            panel2.Controls.Add(dgvTopScore);
             panel2.Controls.Add(label3);
             panel2.Name = "panel2";
             // 
-            // dataGridView1
+            // dgvTopScore
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = Color.LightGray;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(dataGridView1, "dataGridView1");
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
+            dgvTopScore.AllowUserToAddRows = false;
+            dgvTopScore.AllowUserToDeleteRows = false;
+            dgvTopScore.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTopScore.BackgroundColor = Color.LightGray;
+            dgvTopScore.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(dgvTopScore, "dgvTopScore");
+            dgvTopScore.Name = "dgvTopScore";
+            dgvTopScore.ReadOnly = true;
             // 
             // label3
             // 
@@ -167,7 +167,7 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTopScore).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -192,7 +192,7 @@
         private PictureBox pictureBox2;
         private Label label2;
         private Label label3;
-        private DataGridView dataGridView1;
+        private DataGridView dgvTopScore;
         private DataGridView dgvRunHistory;
     }
 }

@@ -102,6 +102,12 @@
             mtxtDistance.Clear();
             cbTerrain.SelectedIndex = -1;
             cbWeather.SelectedIndex = -1;
+
+            // After saving the new run in CreateRunFrm
+            if (Owner is MainFrm mainForm)
+            {
+                mainForm.ReloadTopScores();
+            }
         }
 
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

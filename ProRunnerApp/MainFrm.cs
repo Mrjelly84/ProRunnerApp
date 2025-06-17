@@ -22,7 +22,15 @@ namespace ProRunnerApp
             dgvRunHistory.Columns.Add("Distance", "Distance(Meters)");
             dgvRunHistory.Columns.Add("Date", "Date");
 
+            // Add initialization for dgvTopScore
+            dgvTopScore.Columns.Add("Name", "Name");
+            dgvTopScore.Columns.Add("Terrain", "Terrain");
+            dgvTopScore.Columns.Add("Weather", "Weather");
+            dgvTopScore.Columns.Add("Distance", "Distance(Meters)");
+            dgvTopScore.Columns.Add("Date", "Date");
+
             ReloadRunHistory();
+            ReloadTopScores(); // <-- Add this line
         }
 
         private void btnCreateRun_Click(object sender, EventArgs e)
@@ -94,6 +102,42 @@ namespace ProRunnerApp
                 foreach (var values in runs)
                 {
                     dgvRunHistory.Rows.Add(values[0], values[1], values[2], values[3], values[4]);
+                }
+            }
+        }
+
+        public void ReloadTopScores()
+        {
+            dgvTopScore.Rows.Clear();
+            string filePath = Path.Combine(Application.StartupPath, "RunHistory.txt");
+            if (File.Exists(filePath))
+            {
+                var runs = new List<string[]>();
+                using (StreamReader reader = File.OpenText(filePath))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] values = line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                        if (values.Length >= 5)
+                        {
+                            runs.Add(values);
+                        }
+                    }
+                }
+
+                // Sort runs by distance (index 3), descending (top distance first)
+                runs.Sort((a, b) =>
+                {
+                    double distA = 0, distB = 0;
+                    double.TryParse(a[3], out distA);
+                    double.TryParse(b[3], out distB);
+                    return distB.CompareTo(distA); // Descending
+                });
+
+                foreach (var values in runs)
+                {
+                    dgvTopScore.Rows.Add(values[0], values[1], values[2], values[3], values[4]);
                 }
             }
         }
