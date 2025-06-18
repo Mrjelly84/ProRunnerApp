@@ -120,21 +120,25 @@
             selectedRow.Cells[2].Value = newWeather;
             selectedRow.Cells[4].Value = newDate;
 
-            // Save all rows back to file
+            // Update only the edited run in the file
             string filePath = Path.Combine(Application.StartupPath, "RunHistory.txt");
-            using (StreamWriter writer = new StreamWriter(filePath, false))
+            var lines = File.ReadAllLines(filePath).ToList();
+            for (int i = 0; i < lines.Count; i++)
             {
-                foreach (DataGridViewRow row in dgvResults.Rows)
+                string[] values = lines[i].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                if (values.Length >= 5 &&
+                    values[0] == oldName &&
+                    values[1] == oldTerrain &&
+                    values[2] == oldWeather &&
+                    values[3] == oldDistance &&
+                    values[4] == oldDate)
                 {
-                    if (!row.IsNewRow)
-                    {
-                        string[] values = new string[5];
-                        for (int i = 0; i < 5; i++)
-                            values[i] = row.Cells[i].Value?.ToString() ?? "";
-                        writer.WriteLine(string.Join(",", values));
-                    }
+                    // Replace with new values
+                    lines[i] = string.Join(",", newName, newTerrain, newWeather, oldDistance, newDate);
+                    break;
                 }
             }
+            File.WriteAllLines(filePath, lines);
 
             MessageBox.Show("Run updated successfully.", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
             OnRunHistoryChanged();

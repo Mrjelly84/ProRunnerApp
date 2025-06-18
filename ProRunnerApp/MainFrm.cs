@@ -43,14 +43,16 @@ namespace ProRunnerApp
         private void btnManageRuns_Click(object sender, EventArgs e)
         {
             var manageRunsFrm = new ManageRunsFrm();
-            manageRunsFrm.RunHistoryChanged += (s, ev) => _runHistoryChanged = true;
+            manageRunsFrm.RunHistoryChanged += (s, ev) =>
+            {
+                _runHistoryChanged = true;
+                ReloadTopScores(); // Add this line to update dgvTopScore
+            };
             _runHistoryChanged = false;
             manageRunsFrm.ShowDialog();
             if (_runHistoryChanged)
                 ReloadRunHistory();
         }
-
-        
 
         private void btnOpenCreateRun_Click(object sender, EventArgs e)
         {
@@ -62,7 +64,11 @@ namespace ProRunnerApp
         private void btnOpenManageRuns_Click(object sender, EventArgs e)
         {
             var manageRunsFrm = new ManageRunsFrm();
-            manageRunsFrm.RunHistoryChanged += (s, ev) => _runHistoryChanged = true;
+            manageRunsFrm.RunHistoryChanged += (s, ev) =>
+            {
+                _runHistoryChanged = true;
+                ReloadTopScores(); // Add this line to update dgvTopScore
+            };
             _runHistoryChanged = false;
             manageRunsFrm.ShowDialog();
             if (_runHistoryChanged)
