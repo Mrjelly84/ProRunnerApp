@@ -104,9 +104,9 @@
             cbWeather.SelectedIndex = -1;
 
             // After saving the new run in CreateRunFrm
-            if (Owner is MainFrm mainForm)
+            if (_mainForm is MainFrm mainForm)
             {
-                mainForm.ReloadTopScores();
+                mainForm.ReloadTopScores(); // Ensure this is called on _mainForm, not Owner
             }
         }
 

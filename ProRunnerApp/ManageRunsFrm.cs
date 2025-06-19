@@ -153,23 +153,36 @@
             }
             if (MessageBox.Show("Are you sure you want to delete the selected run?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                // Remove selected row
-                dgvResults.Rows.Remove(dgvResults.SelectedRows[0]);
-                // Save remaining rows back to file
+                // Get selected run's values
+                DataGridViewRow selectedRow = dgvResults.SelectedRows[0];
+                string delName = selectedRow.Cells[0].Value?.ToString() ?? "";
+                string delTerrain = selectedRow.Cells[1].Value?.ToString() ?? "";
+                string delWeather = selectedRow.Cells[2].Value?.ToString() ?? "";
+                string delDistance = selectedRow.Cells[3].Value?.ToString() ?? "";
+                string delDate = selectedRow.Cells[4].Value?.ToString() ?? "";
+
+                // Remove from DataGridView
+                dgvResults.Rows.Remove(selectedRow);
+
+                // Remove only the selected run from the file
                 string filePath = Path.Combine(Application.StartupPath, "RunHistory.txt");
-                using (StreamWriter writer = new StreamWriter(filePath, false))
+                var lines = File.ReadAllLines(filePath).ToList();
+                for (int i = 0; i < lines.Count; i++)
                 {
-                    foreach (DataGridViewRow row in dgvResults.Rows)
+                    string[] values = lines[i].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    if (values.Length >= 5 &&
+                        values[0] == delName &&
+                        values[1] == delTerrain &&
+                        values[2] == delWeather &&
+                        values[3] == delDistance &&
+                        values[4] == delDate)
                     {
-                        if (!row.IsNewRow)
-                        {
-                            string[] values = new string[5];
-                            for (int i = 0; i < 5; i++)
-                                values[i] = row.Cells[i].Value?.ToString() ?? "";
-                            writer.WriteLine(string.Join(",", values));
-                        }
+                        lines.RemoveAt(i);
+                        break;
                     }
                 }
+                File.WriteAllLines(filePath, lines);
+
                 MessageBox.Show("Run deleted successfully.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 OnRunHistoryChanged();
             }
