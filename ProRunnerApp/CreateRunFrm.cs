@@ -89,7 +89,7 @@
 
             // Save to a single file
             string filePath = Path.Combine(Application.StartupPath, "RunHistory.txt");
-            using (StreamWriter writer = new StreamWriter(filePath, append: true))
+            using (StreamWriter writer = new StreamWriter(filePath, true)) // 'true' enables append mode
             {
                 writer.WriteLine($"{name},{terrain},{weather},{distance},{date}");
             }
