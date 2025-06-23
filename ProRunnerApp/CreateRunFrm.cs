@@ -9,7 +9,7 @@
             _mainForm = mainForm;
             InitializeComponent();
             dateTimePicker1.Visible = true;
-
+            #region // Ensure the dateTimePicker1 is set to today's date
             // Define the columns for the DataGridView
             dataGridView1.Columns.Add("Name", "Name");
             dataGridView1.Columns.Add("Terrain", "Terrain");
@@ -32,10 +32,12 @@
                             dataGridView1.Rows.Add(values[0], values[1], values[2], values[3], values[4]);
                         }
                     }
+                    #endregion
+
                 }
             }
         }
-
+        #region // Ensure the OnFormClosed method is overridden
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
             base.OnFormClosed(e);
@@ -49,6 +51,8 @@
                 _mainForm?.Show();
             }
         }
+        #endregion
+        #region // Ensure the InitializeComponent method is private
 
         private void mtxtDistance_TextChanged(object sender, EventArgs e)
         {
@@ -62,7 +66,7 @@
                 mtxtDistance.Text = "";
             }
         }
-
+        #endregion
         private void cbTerrain_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -72,7 +76,7 @@
         {
 
         }
-
+        #region // Ensure the btnSave_Click method is private
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtFileName.Text) || cbTerrain.SelectedIndex == -1 || cbWeather.SelectedIndex == -1 || string.IsNullOrWhiteSpace(mtxtDistance.Text))
@@ -102,7 +106,7 @@
             mtxtDistance.Clear();
             cbTerrain.SelectedIndex = -1;
             cbWeather.SelectedIndex = -1;
-
+            #endregion
             // After saving the new run in CreateRunFrm
             if (_mainForm is MainFrm mainForm)
             {

@@ -1,0 +1,12 @@
+Fireball,Pathway,Snow,60,2025-06-11
+Buzzsaw,Sand,Windy,33,2025-06-27
+Ben Richards,Grass,Rain,25,2025-06-18
+Amber Mendez,Pathway,Sunny,78,2025-06-28
+Captain Freedom,Road,Snow,89,2025-06-29
+Laughlin,Grass,Snow,23,2025-06-21
+Weiss,Road,Windy,33,2025-06-21
+Subzero,Grass,Rain,56,2025-06-29
+Dynamo,Road,Rain,67,2025-06-15
+Sven,Grass,Sunny,12,2025-06-15
+Yaphet Kotto,Grass,Snow,56,2025-06-22
+Jesse Ventura,Sand,Rain,20,2025-07-04

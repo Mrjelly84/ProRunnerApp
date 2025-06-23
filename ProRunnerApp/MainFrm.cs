@@ -32,7 +32,7 @@ namespace ProRunnerApp
             ReloadRunHistory();
             ReloadTopScores(); // <-- Add this line
         }
-
+        #region
         private void btnCreateRun_Click(object sender, EventArgs e)
         {
             // Pass 'this' as the required 'mainForm' parameter
@@ -53,14 +53,14 @@ namespace ProRunnerApp
             if (_runHistoryChanged)
                 ReloadRunHistory();
         }
-
+        #endregion
         private void btnOpenCreateRun_Click(object sender, EventArgs e)
         {
             var createRunFrm = new CreateRunFrm(this);
             this.Hide();
             createRunFrm.Show();
         }
-
+        #region // Ensure the btnOpenCreateRun_Click method is private
         private void btnOpenManageRuns_Click(object sender, EventArgs e)
         {
             var manageRunsFrm = new ManageRunsFrm();
@@ -74,7 +74,9 @@ namespace ProRunnerApp
             if (_runHistoryChanged)
                 ReloadRunHistory();
         }
+        #endregion
 
+        #region // Ensure the PerformSearch method is private
         // Add this method to MainFrm to reload the DataGridView
         public void ReloadRunHistory()
         {
@@ -95,7 +97,8 @@ namespace ProRunnerApp
                         }
                     }
                 }
-
+                #endregion
+                #region // Ensure the sorting logic is correct
                 // Sort runs by date (newest first, index 4)
                 runs.Sort((a, b) =>
                 {
@@ -111,6 +114,8 @@ namespace ProRunnerApp
                 }
             }
         }
+        #endregion
+        #region // Ensure the PerformSearch method is private
 
         public void ReloadTopScores()
         {
@@ -131,7 +136,8 @@ namespace ProRunnerApp
                         }
                     }
                 }
-
+                #endregion
+                #region // Ensure the sorting logic is correct
                 // Sort runs by distance (index 3), descending (top distance first)
                 runs.Sort((a, b) =>
                 {
@@ -146,6 +152,7 @@ namespace ProRunnerApp
                     dgvTopScore.Rows.Add(values[0], values[1], values[2], values[3], values[4]);
                 }
             }
+            #endregion
         }
     }
 }
